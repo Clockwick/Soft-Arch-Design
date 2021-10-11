@@ -26,13 +26,13 @@ public class JSONBookMetadataFormatter implements BookMetadataFormatter {
     public BookMetadataFormatter append(Book b) {
         // Please implement this method. You may create additional methods as you see fit.
         JSONObject obj = new JSONObject();
-        obj.put("ISBN", b.getISBN());
+        obj.put(Book.Metadata.ISBN.value, b.getISBN());
         List<String> authors = new ArrayList<String>();
         for (String author : b.getAuthors())
             authors.add(author);
-        obj.put("Authors", authors);
-        obj.put("Title", b.getTitle());
-        obj.put("Publisher", b.getPublisher());
+        obj.put(Book.Metadata.AUTHORS.value, authors);
+        obj.put(Book.Metadata.TITLE.value, b.getTitle());
+        obj.put(Book.Metadata.PUBLISHER.value, b.getPublisher());
         bookList.add(obj);
         return this;
     }
@@ -42,7 +42,7 @@ public class JSONBookMetadataFormatter implements BookMetadataFormatter {
     public String getMetadataString() {
         // Please implement this method. You may create additional methods as you see fit.
         JSONObject jsonObj = new JSONObject();
-        jsonObj.put("Books", bookList);
+        jsonObj.put(Book.class.getSimpleName() + "s", bookList);
         return jsonObj.toString();
     }
 }

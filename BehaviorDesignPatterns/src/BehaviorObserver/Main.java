@@ -16,7 +16,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String input = "";
 
-        while (true) {
+        for (;;) {
             System.out.print("Enter input : ");
             input = scanner.nextLine();
 

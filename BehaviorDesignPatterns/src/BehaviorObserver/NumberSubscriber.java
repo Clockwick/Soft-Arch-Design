@@ -11,7 +11,7 @@ import java.util.concurrent.Flow;
 public class NumberSubscriber extends StringSubscriber {
     public NumberSubscriber() {
         String filename = "Number.txt";
-        Path filePath = Paths.get(System.getProperty("user.dir"), "src", "BehaviorObserver", filename);
+        Path filePath = Paths.get(System.getProperty("user.dir"), "src", "output", filename);
 
         this.file = new File(filePath.toString());
     }
